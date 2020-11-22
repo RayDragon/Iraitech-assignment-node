@@ -61,7 +61,7 @@ app.post('/sol2-y', async (req, res)=>{
 });
 
 
-
-app.listen(process.env.PORT | 8002, ()=>{
-    console.log("App started");
+const port = process.env.PORT || 8002;
+app.listen(port, ()=>{
+    console.log("App started on port", port);
 })
