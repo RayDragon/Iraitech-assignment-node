@@ -60,6 +60,11 @@ app.post('/sol2-y', async (req, res)=>{
     }
 });
 
+app.use('/web', express.static('web'));
+app.use((req, res, next)=>{
+    res.redirect('/web/index.html');
+});
+
 
 const port = process.env.PORT || 8002;
 app.listen(port, ()=>{
